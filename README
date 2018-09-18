@@ -1,0 +1,57 @@
+#REQUIREMENTS UBUNTU (Fresh install on a VM works best)
+
+#install python
+sudo apt-get update
+sudo apt-get upgrade python
+
+#test if python is installed
+#"python"
+#print "h"
+#exit 
+
+#due to differences in github configs and urls follow the following tutoiral diligently:
+#DO NOT DO TEST SUITE AND AFTER
+#https://docs.djangoproject.com/en/2.1/intro/contributing/
+
+#Create a django project and verify if it works
+#If you are unfamiliar with django follow: https://docs.djangoproject.com/en/2.1/intro/tutorial01/
+
+#Redis installation
+#based on the following tutorial:
+#https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-redis-on-ubuntu-16-04
+
+#Create the Redis User, Group and Directories <--VERY IMPORTANT OR ELSE OUR REDIS SERVER WILL BE OPEN TO THE WORLD
+#Now, we just have to create the user, group, and directory that we referenced in the previous two files.
+#Begin by creating the redis user and group. This can be done in a single command by typing:
+#sudo adduser --system --group --no-create-home redis
+#Now, we can create the /var/lib/redis directory by typing:
+#udo mkdir /var/lib/redis
+#We should give the redis user and group ownership over this directory:
+#sudo chown redis:redis /var/lib/redis
+#Adjust the permissions so that regular users cannot access this location:
+#sudo chmod 770 /var/lib/redis
+
+#TODO https://www.digitalocean.com/community/tutorials/how-to-secure-your-redis-installation-on-ubuntu-14-04
+
+#get django redis
+#https://code.tutsplus.com/tutorials/how-to-cache-using-redis-in-django-applications--cms-30178
+
+#get POSTGRE SQL
+#https://launchschool.com/blog/how-to-install-postgres-for-linux
+
+#Postgre sql password help
+#https://stackoverflow.com/questions/15008204/how-to-check-postgres-user-and-password 
+
+#get django redis and do the following: https://code.tutsplus.com/tutorials/how-to-cache-using-redis-in-django-applications--cms-30178
+
+#OPTIONAL: get pgadmin
+
+#OPTIONAL: for testing get node: https://nodesource.com/blog/installing-node-js-tutorial-ubuntu/
+#AND do "sudo npm install -g loadtest" for the testing framework
+
+#Security for database credentials, secret keys, api keys, etc.
+#Before pushing any code to github go to your django project's settings.py file
+#locate any Secret keys, database credentials, etc. and set them into your environment variables (in bashrc) to prevent accicdential disclousure
+
+
+
