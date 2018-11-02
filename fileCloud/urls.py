@@ -15,10 +15,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from fileUploader.views import index
-from fileUploader.views import view_books
+from fileUploader.models import User
+from fileUploader.views import UserViewSet, register_user
+from rest_framework import routers
+from django.conf.urls import include
+#from fileUploader.views import index
+#from fileUploader.views import view_books
+
+router = routers.DefaultRouter()
+router.register(r'api/users', UserViewSet)
+#router.register(r'api/register', register_user)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-   path('test/', view_books, name='view_books'),
+    path('register/', register_user),
+    path(r'', include(router.urls)),
 ]
