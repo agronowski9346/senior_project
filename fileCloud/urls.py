@@ -19,6 +19,7 @@ from fileUploader.models import User
 from fileUploader.views import UserViewSet, register_user
 from rest_framework import routers
 from django.conf.urls import include
+from django.conf.urls import url
 #from fileUploader.views import index
 #from fileUploader.views import view_books
 
