@@ -11,7 +11,6 @@ from fileCloud.serializers import UserSerializer
 from fileUploader.models import User
 from django.contrib.auth.hashers import make_password
 from rest_framework.response import Response
-from rest_framework.views import APIView
 #from fileUploader.models import Product   ;sample
 # Create your views here.
  
@@ -31,11 +30,9 @@ def index(request):
 '''
 
 
-class UserViewSet(APIView):
-    def get(self, request, format=None):
-        queryset = User.objects.all()
-        serializer_class = UserSerializer
-        return Response(serializer_class.data)
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
 
 #process POST request to register a user
 @api_view(['POST'])
