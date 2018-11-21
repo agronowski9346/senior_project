@@ -34,7 +34,7 @@ urlpatterns = [
         name='user-create',
     ),
     url(
-        r'^user/<int:pk>/$',
+        r'^user/(?P<username>[\w.@+-]+)/$',
         UserViewSet.as_view({'get': 'retrieve'}),
         name='user-retrieve',
     ),
