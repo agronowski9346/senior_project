@@ -35,13 +35,14 @@ class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
-    def retrieve(self, request, pk=None):
+    def retrieve(self, request, pk=None, **kwargs):
         queryset = User.objects.all()
-        user = get_object_or_404(queryset, pk=pk)
+        username = self.kwargs['username']
+        user = get_object_or_404(queryset, pk=username)
         serializer = UserSerializer(user)
         return Response(serializer.data)
 
-    def post(self, request, format=None):
+    def create(self, request, format=None):
         serializer = UserSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
