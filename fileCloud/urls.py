@@ -23,7 +23,7 @@ from django.conf.urls import include
 #from fileUploader.views import view_books
 
 router = routers.DefaultRouter()
-router.register(r'api/users', UserViewSet)
+router.register(r'api/user', UserViewSet, base_name='User')
 #router.register(r'api/register', register_user)
 
 urlpatterns = [
