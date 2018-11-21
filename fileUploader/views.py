@@ -35,13 +35,13 @@ class UserViewSet(viewsets.ModelViewSet):
     serializer_class = UserSerializer
 
 #process POST request to register a user
-@api_view(['PUT'])
+@api_view(['POST'])
 def register_user(request):
-    if request.method == 'PUT':
+    if request.method == 'POST':
         try:
             user = User('x', 'x', 'x', 'x', 'x', 'x', 'x', 'x')
-            print(request.PUT.get("username"))
-            user = User(username=request.PUT.get("username"), email = request.PUT.get("email"), first_name = request.PUT.get("first_name"), last_name = request.POST.get("last_name"), password=make_password(request.PUT.get("password")), phone_number = request.PUT.get("phone_number"), home_address = request.PUT.get("home_address"))
+            print(request.POST.get("username"))
+            user = User(username=request.POST.get("username"), email = request.POST.get("email"), first_name = request.POST.get("first_name"), last_name = request.POST.get("last_name"), password=make_password(request.POST.get("password")), phone_number = request.POST.get("phone_number"), home_address = request.POST.get("home_address"))
             user.save()
         except Exception as e:
             return Response('', status=status.HTTP_201_CREATED)
