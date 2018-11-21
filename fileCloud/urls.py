@@ -35,7 +35,7 @@ urlpatterns = [
     ),
     url(
         r'^user/(?P<string>[\w\-]+)/$',
-        TodoViewSet.as_view({'get': 'retrieve'}),
+        UserViewSet.as_view({'get': 'retrieve'}),
         name='user-retrieve',
     ),
     path('admin/', admin.site.urls),
