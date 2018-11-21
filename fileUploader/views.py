@@ -39,8 +39,8 @@ class UserViewSet(viewsets.ModelViewSet):
 def register_user(request):
     if request.method == 'PUT':
         try:
-            #user = User('x', 'x', 'x', 'x', 'x', 'x', 'x', 'x')
-            #print(request.PUT.get("username"))
+            user = User('x', 'x', 'x', 'x', 'x', 'x', 'x', 'x')
+            print(request.PUT.get("username"))
             user = User(username=request.PUT.get("username"), email = request.PUT.get("email"), first_name = request.PUT.get("first_name"), last_name = request.POST.get("last_name"), password=make_password(request.PUT.get("password")), phone_number = request.PUT.get("phone_number"), home_address = request.PUT.get("home_address"))
             user.save()
         except Exception as e:
