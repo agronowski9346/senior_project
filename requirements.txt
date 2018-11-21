@@ -9,6 +9,7 @@ cryptography==2.3.1
 -e git+https://github.com/agronowski9346/django.git@f87f9c5f63f779edc74f286ccf88d13db96c44de#egg=Django
 django-redis==4.9.0
 djangorestframework==3.8.2
+dj-database-url==0.4.2
 extras==1.0.0
 fixtures==3.0.0
 Flask==0.12.2
