@@ -25,7 +25,7 @@ SECRET_KEY = '^p(l=cx57_$@++6%iv3hxc-8(dl6c6_p901@q)n7$=jzb)nv2x'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['vibevents.herokuapp.com', '127.0.0.1:8000']
+ALLOWED_HOSTS = ['vibevents.herokuapp.com', '127.0.0.1:8000', 'localhost', '127.0.0.1']
 
 
 # Application definition
