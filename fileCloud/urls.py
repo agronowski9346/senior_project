@@ -27,6 +27,11 @@ router.register(r'api/user', UserViewSet, base_name='User')
 #router.register(r'api/register', register_user)
 
 urlpatterns = [
+    url(
+        r'^user/$',
+        UserViewSet.as_view({'post': 'create'}),
+        name='user-create',
+    ),
     path('admin/', admin.site.urls),
     path('register/', register_user),
     path(r'', include(router.urls)),
