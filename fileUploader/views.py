@@ -36,8 +36,9 @@ class UserViewSet(viewsets.ModelViewSet):
     serializer_class = UserSerializer
 
     def retrieve(self, request, pk=None):
-        queryset = User.objects.get(pk=pk)
-        serializer = UserSerializer(queryset, many=True)
+        queryset = User.objects.all()
+        user = get_object_or_404(queryset, pk=pk)
+        serializer = UserSerializer(user)
         return Response(serializer.data)
 
 #process POST request to register a user
