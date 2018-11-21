@@ -33,6 +33,11 @@ urlpatterns = [
         UserViewSet.as_view({'post': 'create'}),
         name='user-create',
     ),
+    url(
+        r'^user/(?P<string>[\w\-]+)/$',
+        TodoViewSet.as_view({'get': 'retrieve'}),
+        name='user-retrieve',
+    ),
     path('admin/', admin.site.urls),
     path('register/', register_user),
     path(r'', include(router.urls)),
