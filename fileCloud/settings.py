@@ -77,7 +77,9 @@ WSGI_APPLICATION = 'fileCloud.wsgi.application'
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
 
 DATABASES = {
-    DATABASES['default'] = dj_database_url.config()
+    'default': dj_database_url.config(
+        default=config('DATABASE_URL')
+    )
 }
 
 CACHES = {
