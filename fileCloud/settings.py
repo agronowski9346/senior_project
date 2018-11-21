@@ -77,7 +77,6 @@ WSGI_APPLICATION = 'fileCloud.wsgi.application'
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
 
 DATABASES = {
-    db_from_env = dj_database_url.config(conn_max_age=500)
     DATABASES['default'] = dj_database_url.config()
 }
 
